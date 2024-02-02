@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/bootstrap.css">
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <div class="container">
+        <h1 class="mb-5 mt-5 text-center">{{title}}</h1>
+        <form action="/contact/edit_form" method="post" enctype="multipart/form-data">
+            <div class="mb-3">
+                <label class="form-label">이메일</label>
+                <input class="form-control" type="text" id="email" name="email" value="{{result.email}}">
+            </div>
+            <div class="mb-3">
+                <label class="form-label">전화번호</label>
+                <input class="form-control" type="text" id="phone" name="phone" value="{{result.phone}}">
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Service ID</label>
+                <input class="form-control" type="text" id="service_id" name="service_id" value="{{result.service_id}}">
+            </div>
+            <div class="mb-3">
+                <label class="form-label">TEMPLATE ID</label>
+                <input class="form-control" type="text" id="template_id" name="template_id" value="{{result.template_id}}">
+            </div>
+            <div class="mb-3">
+                <label class="form-label">API</label>
+                <input class="form-control" type="text" id="api" name="api" value="{{result.api}}">
+            </div>
+            <div class="mb-5 d-flex">
+                <div class="col-3">
+                    <label class="form-label">이미지 수정</label>
+                    <input type="checkbox" value="1" id="check" name="check">
+                </div>
+                <div class="col-3">
+                    <!-- <p>{{result.orgimg}}</p> -->
+                    <p>email.png</p>
+                </div>
+                <div class="col-6">
+                    <input type="file" class="form-control hidden-img" id="img" name="img">
+                </div>
+            </div>
+            <div class="text-center">
+                <a href="/contact" class="btn btn-secondary">이전</a>
+                <button type="submit" class="btn btn-info">등록</button>
+            </div>
+        </form>
+    </div>
+    <script>
+        const checkbox = document.querySelector("#check");
+        const inputbox = document.querySelector("#img");
+
+        checkbox.addEventListener(("click"), () => {
+            if(checkbox.checked){
+                inputbox.style.display = "block";
+            }
+            else{
+                inputbox.style.display = "none";
+            }
+        })
+    </script>
+</body>
+</html>

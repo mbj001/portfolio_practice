@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/bootstrap.css" />
+    <link rel="stylesheet" href="/style.css" />
+</head>
+<body>
+    <div class="container">
+        <h1 class="text-center mb-5 mt-5">{{title}}</h1>
+        <form action="/about/edit_form" method="post" enctype="multipart/form-data">
+            <div class="mb-2">
+                <label class="form-label">이름</label>
+                <input class="form-control" id="name" name="name" type="text" value="{{result.name}}" />
+            </div>
+            <div class="mb-2">
+                <label class="form-label">생일</label>
+                <input class="form-control" id="birth" name="birth" type="text" value="{{result.birthday}}" />
+            </div>
+            <div class="mb-2">
+                <label class="form-label">주소</label>
+                <input class="form-control" id="address" name="address" type="text" value="{{result.address}}" />
+            </div>
+            <div class="mb-2">
+                <label class="form-label">이메일</label>
+                <input class="form-control" id="email" name="email" type="text" value="{{result.email}}" />
+            </div>
+            <div class="mb-2">
+                <label class="form-label">대학교</label>
+                <input class="form-control" id="school" name="school" type="text" value="{{result.school}}" />
+            </div>
+            <div class="mb-2">
+                <label class="form-label">학과</label>
+                <input class="form-control" id="department" name="department" type="text" value="{{result.department}}" />
+            </div>           
+            <div class="mb-5">
+                <div>
+                    <label class="form-label">사진</label>
+                </div>
+                <div class="d-flex align-items-center">
+                    <div class="col-3">
+                        <label for="">이미지 수정</label>
+                        <input type="checkbox" id="imgchk" name="imgcheck" value="1" />
+                    </div>
+                    <div class="col-3">
+                        <p class="mb-0 pb-0">{{result.orgphoto}}</p>
+                    </div>
+                    <div class="col-6">
+                        <input class="form-control about-input-img" id="photo" name="photo" type="file" />
+                    </div>
+                    <input type="hidden" id="orgphoto" name="orgphoto" type="text" value="{{result.orgphoto}}">
+                    <input type="hidden" id="photo" name="photo" type="text" value="{{result.photo}}">
+                </div>
+            </div>           
+            <div class="text-center"> 
+                <a href="/about" class="btn btn-secondary">이전</a>
+                <button type="submit" class="btn btn-info">제출</button>
+            </div>
+        </form>
+    </div>
+
+    <script>
+        const checkbox = document.querySelector("#imgchk");
+        const inputToggle = document.querySelector("#photo");
+
+        checkbox.addEventListener(("click"), () => {
+            if(checkbox.checked){
+                inputToggle.style.display = "block";
+            }
+            else{
+                inputToggle.style.display = "none";
+            }
+        })
+    </script>
+</body>
+</html>

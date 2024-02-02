@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/bootstrap.css">
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <div class="container ">
+        <h1 class="text-center mt-5 mb-5">{{title}}</h1>
+
+        <div class="d-flex justify-content-center flex-wrap">
+        {% for project in result %}
+        <div class="project-box mb-5 position-relative">
+            <p class="text-center">{{project.name}}</p>
+            <div class="d-flex project-img">
+                <img class="w-50 h-100 d-inline-block" src="/img/projects/{{project.img1}}" alt="img1">
+                <img class="w-50 h-100 d-inline-block" src="/img/projects/{{project.img2}}" alt="img1">        
+            </div>
+            <div class="project-edit-box">
+                <!-- <a href="/projects/edit/{{project.num}}">
+                    <p class="project-edit-text">수정하기</p>
+                </a> -->
+                <!-- <a href="/projects/edit/{{project.num}}" class="project-edit-text">수정하기</a> -->
+                <a href="/projects/edit/{{project.num}}" class="project-edit-text w-btn-outline w-btn-gray-outline">수정하기</a>
+            </div>
+        </div>
+        {% endfor %}
+        </div>
+        <div class="text-center">
+            <a href="/" class="btn btn-secondary">이전</a>
+            <a href="/projects/write" class="btn btn-info">새 프로젝트 등록</a>
+        </div>
+    </div>
+</body>
+</html>

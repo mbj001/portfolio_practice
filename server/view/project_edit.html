@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/bootstrap.css" />
+    <link rel="stylesheet" href="/style.css" />
+</head>
+<body>
+    <div class="container">
+        <h1 class="text-center mb-5 mt-5">{{title}}</h1>
+        <form action="/projects/edit_form" method="post" enctype="multipart/form-data">
+            <div class="mb-4">
+                <label class="form-label">프로젝트 명</label>
+                <input type="text" id="name" name="name" value="{{result.name}}" class="form-control" />
+            </div>
+            <div class="mb-3 d-flex align-items-center">
+                <div class="col-3">
+                    <label class="form-label">이미지 수정</label>
+                    <input type="checkbox" id="check" name="check" value="1">
+                </div>
+                <div class="col-3">
+                    <p class="mb-0 pb-0">{{result.orgimg1}}</p>
+                </div>
+                <div class="col-6">
+                    <input type="file" id="img" name="img" class="form-control project-input-img" /> 
+                </div>
+            </div>
+            <div class="mb-5 d-flex align-items-center">
+                <div class="col-3">
+                    <label class="form-label">이미지 수정</label>
+                    <input type="checkbox" id="check" name="check" value="2">
+                </div>
+                <div class="col-3">
+                    <p class="mb-0 pb-0">{{result.orgimg2}}</p>
+                </div>
+                <div class="col-6">
+                    <input type="file" id="img" name="img" class="form-control project-input-img" /> 
+                </div>
+                <input type="hidden" id="num" name="num" value="{{result.num}}">
+            </div>
+            <a href="/projects" class="btn btn-secondary">이전</a>
+            <button type="submit" class="btn btn-info">수정 완료</button>
+        </form>
+    </div>
+
+    <script>
+        const checkbox = document.querySelectorAll("#check");
+        const inputToggle = document.querySelectorAll("#img");
+
+        checkbox.forEach((box, index) => {
+            box.addEventListener("click", function(){
+                if(box.checked){
+                    inputToggle[index].style.display = "block";
+                }
+                else{
+                    inputToggle[index].style.display = "none";
+                }
+            })
+        })
+    </script>
+</body>
+</html>

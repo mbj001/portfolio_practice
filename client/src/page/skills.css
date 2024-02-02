@@ -1,0 +1,41 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+body{
+    font-family: 'Noto Sans KR', sans-serif;
+}
+
+.skills-box,
+.timeline-box{
+    width: 80%;
+    /* border: 1px solid black; */
+    margin: 50px auto;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 200px;
+    margin-top: 50px;
+}
+
+.skill-text{
+    width: 15%;
+}
+
+.skill-bar{
+    /* width: 68%; */
+    height: 30px;
+    background-color: rgb(245, 209, 158);
+    border-radius: 10px;
+    background-image: linear-gradient(90deg, rgb(176, 209, 255), rgb(60, 162, 220));
+    animation: bar-ani 2s;
+}
+
+@keyframes bar-ani{
+    0%{
+        width: 0;
+    }
+}
+
+.timeline-detail p{
+    margin-top: 5px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid black;
+}

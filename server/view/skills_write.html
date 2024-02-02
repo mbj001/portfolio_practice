@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/bootstrap.css" />
+    <link rel="stylesheet" href="/style.css" />
+</head>
+<body>
+    <div class="container">
+        <h1 class="text-center mt-5">{{title}}</h1>
+
+        <form action="/skills/skills_write_form" method="post">
+            <div class="mb-3">
+                <label class="form-label">Skill 이름</label>
+                <input type="text" id="name" name="name" class="form-control">
+            </div>
+            <div class="mb-5">
+                <label class="form-label">스킬 완성도</label>
+                <div class="skills-range-box d-flex justify-content-between mt-3">
+                    <p>0%</p>
+                    <p>10%</p>
+                    <p>20%</p>
+                    <p>30%</p>
+                    <p>40%</p>
+                    <p>50%</p>
+                    <p>60%</p>
+                    <p>70%</p>
+                    <p>80%</p>
+                    <p>90%</p>
+                    <p>100%</p>
+                </div>
+                <input class="form-range mt-0" type="range" id="percent" name="percent" min="0" max="100" value="{{skill_info.percent}}" step="5" />
+                <!-- <input class="about_input" id="percent" name="percent" type="number" value="{{skill_info.percent}}" /> -->
+            </div>
+            <div class="text-center">
+                <a href="/skills" class="btn btn-secondary">이전</a>
+                <button type="submit" class="btn btn-info">등록</button>
+            </div>
+        </form>
+    </div>
+</body>
+</html>

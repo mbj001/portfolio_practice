@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/bootstrap.css" />
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <div class="container">
+        <h1 class="mb-5 text-center mt-5">{{title}}</h1>
+        <h2 class="text-center mb-5">Skill 목록</h2>
+        <div class="card-box d-flex mb-5 justify-content-center">
+            {% for skill in skills_list %}
+            <a href="/skills/skills_edit/{{skill.num}}">
+                <div class="skill-card">
+                    <p class="fw-900">{{skill.name}}</p>
+                    <p>{{skill.percent}}</p>
+                </div>
+            </a>
+            {% endfor %}
+        </div>
+        <h2 class="text-center mb-5">Timeline 목록</h2>
+        <div class="card-box d-flex mb-5 justify-content-center">
+            {% for timeline in timeline_list %}
+            <a href="/skills/timeline_edit/{{timeline.num}}">
+                <div class="timeline-card">
+                    <p class="fw-900">{{timeline.name}}</p>
+                    <p>{{timeline.area}}</p>
+                    <p>{{timeline.year}}</p>
+                </div>
+            </a>
+            {% endfor %}
+        </div>
+        <div class="text-center">
+            <a href="/" class="btn btn-secondary">이전</a>
+            <a href="/skills/skills_write" class="btn btn-info">스킬 추가</a>
+            <a href="/skills/timeline_write" class="btn btn-info">타임라인 추가</a>
+        </div>
+    </div>
+</body>
+</html>

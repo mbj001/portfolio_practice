@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/bootstrap.css" />
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    
+    <!-- <div class="container">
+        <h1 class="text-center mt-5 mb-5">관리자 모드</h1>
+        <ul class="list-group text-center">
+            <li class="list-group-item list-group-item-secondary list-group-item-action">
+                <a href="/main">Main 정보</a>
+            </li>
+            <li class="list-group-item list-group-item-action">
+                <a href="/about">About 정보</a>
+            </li>
+            <li class="list-group-item list-group-item-action">
+                <a href="/skills">Skill 정보</a>
+            </li>
+            <li class="list-group-item list-group-item-action">
+                <a href="/projects">Project 정보</a>
+            </li>
+            <li class="list-group-item list-group-item-action">
+                <a href="/contact">Contact 정보</a>
+            </li>
+        </ul> -->
+        <div class="container mb-5">
+            {% if user %}
+            <h1 class="text-center mt-5 mb-5">관리자 모드</h1>
+            <div class="list-group text-center mb-5">
+                <a href="/main" class="list-group-item list-group-item-light list-group-item-action">Main 정보</a>
+                <a href="/about" class="list-group-item list-group-item-light list-group-item-action">About 정보</a>
+                <a href="/skills" class="list-group-item list-group-item-light list-group-item-action">Skill 정보</a>
+                <a href="/projects" class="list-group-item list-group-item-light list-group-item-action">Project 정보</a>
+                <a href="/contact" class="list-group-item list-group-item-light list-group-item-action">Contact 정보</a>
+            </div>
+            <div class="text-center">
+                <a href="/logout" class="btn btn-info">로그아웃</a>
+            </div>
+            {% else %}
+            <h1 class="text-center mt-5 mb-5">관리자 전용 페이지 입니다.</h1>
+            <div class="container login-box">
+                <h1 class="text-center mb-4">로그인</h1>
+                <form action="/login" method="post">
+                    <div class="mb-3">
+                        <label class="form-label">ID</label>
+                        <input type="text" id="userid" name="userid" class="form-control">
+                    </div>
+                    <div class="mb-5">
+                        <label class="form-label">PASSWORD</label>
+                        <input type="password" id="userpass" name="userpass" class="form-control">
+                    </div>
+                    <div class="text-center">
+                        <a href="/" class="btn btn-secondary">이전</a>
+                        <button type="submit" class="btn btn-info">로그인</button>
+                    </div>
+                </form>
+            </div>
+            {% endif %}
+        </div>
+    </div>
+    <!-- <div class="text-center">
+        <a href="/login" class="btn btn-info">로그인</a>
+    </div> -->
+
+    <script>
+        window.onload = () => {
+            if(new URL(location.href).searchParams.get("error")){
+                // alert(new URL(location.href));
+                alert(new URL(location.href).searchParams.get("error"));
+            }
+        }
+    </script>
+</body>
+</html>

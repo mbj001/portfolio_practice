@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/bootstrap.css" />
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <div class="container">
+        <h1 class="text-center mb-5 mt-5">{{title}}</h1>
+        <div class="about-box text-center mb-5 pt-4 pb-2">
+            <img class="img-thumbnail about-img" src="/img/about/{{about_info.photo}}" alt="photo">
+            <p>{{about_info.name}}</p>
+            <p>{{about_info.birthday}}</p>
+            <p>{{about_info.address}}</p>
+            <p>{{about_info.email}}</p>
+            <p>{{about_info.school}}</p>
+            <p>{{about_info.department}}</p>
+        </div>
+        <div class="text-center">
+            <a href="/" class="btn btn-secondary">이전</a>
+            <a href="/about/edit" class="btn btn-info">수정</a>
+        </div>
+    </div>
+</body>
+</html>

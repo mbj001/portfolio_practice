@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/bootstrap.css" />
+    <link rel="stylesheet" href="/style.css" />
+</head>
+<body>
+    <div class="container">
+        <h1 class="text-center mb-5 mt-5">{{title}}</h1>
+        <form action="/skills/timeline_edit_form" method="post">
+            <h2>Skills 수정</h2>
+            <div class="mb-3">
+                <label class="form-label">이름</label>
+                <input class="form-control" id="name" name="name" type="text" value="{{timeline_info.name}}" />
+            </div>
+            <div class="mb-3">
+                <label class="form-label">지역</label>
+                <input class="form-control" id="area" name="area" type="text" value="{{timeline_info.area}}" />
+            </div>
+            <div class="mb-5">
+                <label class="form-label">년도</label>
+                <input class="form-control" id="year" name="year" type="number" value="{{timeline_info.year}}" />
+            </div>
+            <input type="hidden" id="num" name="num" value="{{timeline_info.num}}">
+            <div class="text-center">
+                <a href="/skills" class="btn btn-secondary">이전</a>
+                <a href="/skills/timeline_del/{{timeline_info.num}}" class="btn btn-danger">삭제</a>
+                <button type="submit" class="btn btn-info">제출</button>
+            </div>
+        </form>
+    </div>
+</body>
+</html>

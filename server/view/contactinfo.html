@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/bootstrap.css" />
+    <link rel="stylesheet" href="/style.css" />
+</head>
+<body>
+    <div class="container">
+        <h1 class="text-center mb-5 mt-5">{{title}}</h1>
+        <div class="contact-box mb-5">
+            <img src="/img/contact/{{result.img}}" alt="">
+            <p class="mt-3"><span>EMAIL</span> : {{result.email}}</p>
+            <p><span>PHONE</span> : {{result.phone}}</p>
+            <p><span>SERVICE ID</span> : {{result.service_id}}</p>
+            <p><span>TEMPLATE ID</span> : {{result.template_id}}</p>
+            <p><span>API</span> : {{result.api}}</p>
+        </div>
+        <div class="text-center">
+            <a href="/" class="btn btn-secondary">이전</a>
+            <a href="/contact/edit" class="btn btn-info">수정</a>
+        </div>
+    </div>
+
+</body>
+</html>
